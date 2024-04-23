@@ -1,0 +1,13 @@
+name: action
+description: first action
+inputs:
+  action-first:
+    description: "My first action"
+    required: false
+    default: "first"
+runs:
+  using: composite
+  steps:
+    - run: |
+        echo "Hello World"
+      shell: bash
