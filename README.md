@@ -1,4 +1,4 @@
-# Java full stack academy
+# Java full stack academy!
 ## Goals
 The main objective of the academy is to give you knowledge of the necessary tools so that you can participate in a full stack project and not feel lost.
 
