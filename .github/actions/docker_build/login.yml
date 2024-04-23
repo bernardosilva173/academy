@@ -13,17 +13,6 @@ inputs:
   tag_name:
     required: false
     default: "Optional"
-  
-jobs:
-  login:
-    runs-on: ubuntu-latest
-    steps:
-      -
-        name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.EXERCISE }}
 
 runs:
   using: composite
