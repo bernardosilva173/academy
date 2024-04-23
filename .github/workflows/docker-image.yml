@@ -17,6 +17,7 @@ jobs:
     - uses: bernardosilva173/academy/.github/actions/docker_build@main
       with:
         tag_name: latest
+        image_name: academy
     - name: list Docker images
       run: docker images
 
