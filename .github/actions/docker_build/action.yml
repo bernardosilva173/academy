@@ -13,16 +13,16 @@ inputs:
   tag_name:
     required: false
     default: "Optional"
-  
+  x
 runs:
   using: composite
   steps: 
     - run:  |
-        if [ -z "${{ inputs.{{input-name}} }}" ]; then
+        if [ -z "$tag_name" ]; then
           echo "TAG=$(date +%s)" >> $GITHUB_ENV
         else
-          echo "TAG=${{ inputs.{{input-name}} }}" >> $GITHUB_ENV
+          echo "TAG=$tag_name" >> $GITHUB_ENV
         fi
         echo "DOCKER_IMAGE_NAME=$NAME" >> $GITHUB_ENV
-        docker build . --file Dockerfile --tag academy:$(date +%s)
+        docker build . --file "$NAME" --tag academy:$(date +%s)
       shell: bash
