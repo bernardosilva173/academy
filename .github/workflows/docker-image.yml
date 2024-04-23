@@ -16,5 +16,5 @@ jobs:
     - uses: bernardosilva173/academy/.github/actions/docker_build@main
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag academy:$(date +%s)
-    -name: list Docker images
+    - name: list Docker images
       run: docker images
