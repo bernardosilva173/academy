@@ -15,8 +15,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - uses: bernardosilva173/academy/.github/actions/docker_build@main
-    - name: list Docker images
-      run: docker images
       with:
         tag_name: latest
+    - name: list Docker images
+      run: docker images
 
