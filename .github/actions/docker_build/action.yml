@@ -5,9 +5,24 @@ inputs:
     description: "My first action"
     required: false
     default: "first"
+  path_dockerfile:
+    required: false
+    default: "Dockerfile" 
+  image_name:
+    required: true
+  tag_name:
+    required: false
+    default: "Optional"
+  
 runs:
   using: composite
-  steps:
-    - run: |
-        echo "Hello World"
+  steps: 
+    - run:  |
+        if [ -z "${{ inputs.{{input-name}} }}" ]; then
+          echo "TAG=$(date +%s)" >> $GITHUB_ENV
+        else
+          echo "TAG=${{ inputs.{{input-name}} }}" >> $GITHUB_ENV
+        fi
+        echo "DOCKER_IMAGE_NAME=$NAME" >> $GITHUB_ENV
+        docker build . --file Dockerfile --tag academy:$(date +%s)
       shell: bash
