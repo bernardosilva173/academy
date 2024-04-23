@@ -7,7 +7,7 @@ RUN mvn dependency:go-offline
 
 COPY . .
 
-RUN mvn -Dmaven.test.skip -Dquarkus.profile=docker clean package
+RUN mvn -Dmaven.test.skip clean package
 
 FROM amazoncorretto:17.0.10-alpine3.19
 WORKDIR /deployments
