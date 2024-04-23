@@ -13,7 +13,7 @@ inputs:
   tag_name:
     required: false
     default: "Optional"
-  x
+  
 runs:
   using: composite
   steps: 
